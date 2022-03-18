@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const config = require('./config/key')
@@ -83,6 +83,10 @@ app.get('/api/users/logout', auth, (req, res) => {
     if(err) return res.json({ success: false, err})
     return res.status(200).send({ success: true })
   })
+})
+
+app.get('/api/hello', (req, res) => {
+  res.send("proxy확인중")
 })
 
 app.listen(port, () => {

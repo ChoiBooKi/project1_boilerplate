@@ -5,12 +5,14 @@
   "main": "./server/index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "all": "concurrently \"npm start\" \"npm start --prefix client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "BooKi",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "concurrently": "^7.0.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",

@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import 'antd/dist/antd.css';
 import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
-import Reducer from './_reducers';
+import Reducer from './_reducer';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore)
 

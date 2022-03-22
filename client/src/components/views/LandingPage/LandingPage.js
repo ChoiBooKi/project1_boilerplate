@@ -17,7 +17,7 @@ function LandingPage() {
     dispatch(logoutUser())
       .then(response => {
         if (response.payload.LogoutSuccess) {
-          navigate('/LoginPage')
+          navigate('/login')
         } else {
           alert('Error')
         }

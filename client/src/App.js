@@ -4,6 +4,7 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 import LoginPage from './components/views/LoginPage/LoginPage'
 import NavBar from './components/views/NavBar/NavBar'
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
+import Auth from './hoc/auth'
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
             renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/Footer" element={<Footer />} />
-          <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/login" element={Auth(LoginPage, false)} />
           <Route path="/NavBar" element={<NavBar />} />
-          <Route path="/RegisterPage" element={<RegisterPage />} />
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/signup" element={Auth(RegisterPage, false)} />
+          <Route path="/" element={Auth(LandingPage, null)} />
         </Routes>
       </div>
     </Router>
